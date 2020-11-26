@@ -1,5 +1,5 @@
-# Implementing machine-vision to track moving objects
-## Developing software for visual guided UAV Navigation
+#  Implementing machine-vision to track moving objects
+## Visual guided UAV Navigation
 
 ### ABSTRACT
 
