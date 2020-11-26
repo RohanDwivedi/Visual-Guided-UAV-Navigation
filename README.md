@@ -17,14 +17,4 @@ on the Ardrone SDK provided by parrot. It also uses an open-source imple-
 mentation of YOLOV3 to train the model and modifies its detector to pass
 the coordinates of the bounding box as a ROS message. We discuss a method
 for the inverse projection of 2d image coordinates to 3d world coordinates
-in this thesis. Fairly good tracking was observed on the simulated tests, the
-performance of the tracking and its limitation is thoroughly discussed.
-The document is organised in a way that we first discuss what and why
-in the introduction section. It is followed by an extensive literature review
-to obtain an understanding of the problem, concepts and available solutions
-and their limitations. Further, the document gives a brief explanation of the
-technical concepts required to be known before attempting to understand
-the methodology discussed in the section that follows. The final sections
-deal with illustrating the performance of the implementation followed by an
-analysis of the weaknesses and challenges. The document concludes with a
-note on the future direction of this work.
+in this thesis. 
