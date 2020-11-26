@@ -1,0 +1,9 @@
+<launch>
+
+<node name="launch" pkg="visual_nav" type="init.sh"/> 
+<node type="rviz" name="rviz" pkg="rviz" args="-d /home/rohan/Desktop/catkin_ws/src/visual_nav/rviz_config/config_file.rviz" />
+<node name="kalmanfilter" pkg="visual_nav" type="run_kalman_filter" />
+<node name="conv2dto3d" pkg="visual_nav" type="run_2dto3d" />
+<node name="controller" pkg="visual_nav" type="run_controller" />
+<node name="log_data" pkg="visual_nav" type="log_data.py"/>
+</launch>

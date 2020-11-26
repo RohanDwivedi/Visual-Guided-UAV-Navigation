@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<path name="straight">
+  <auto_start>true</auto_start>
+  <delay_start>120</delay_start>
+  <loop>false</loop>
+  <waypoint>
+    <velocity>15</velocity>
+    <xy>10 20</xy>
+    <stop_duration>5</stop_duration>
+  </waypoint>
+  <waypoint>
+    <velocity>15</velocity>
+    <xy>10 40</xy>
+    <stop_duration>5</stop_duration>
+  </waypoint>
+  <waypoint>
+    <velocity>15</velocity>
+    <xy>10 90</xy>
+    <stop_duration>5</stop_duration>
+  </waypoint>
+  <waypoint>
+    <velocity>15</velocity>
+    <xy>10 100</xy>
+    <stop_duration>5</stop_duration>
+  </waypoint>
+  <waypoint>
+    <velocity>15</velocity>
+    <xy>10 150</xy>
+    <stop_duration>5</stop_duration>
+  </waypoint>
+  <waypoint>
+    <velocity>15</velocity>
+    <xy>10 200</xy>
+    <stop_duration>1000000</stop_duration>
+  </waypoint>
+ 
+  
+</path>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="vehicle">
+  <include>
+    <uri>model://polaris_ranger_ev</uri>
+  </include>
+  <pose>7 12 0 0 0 1.56</pose>
+  <plugin name="vehicle" filename="libsphinx_vehicle.so">
+    <front_left_wheel>polaris_ranger_ev::front_left_wheel_joint</front_left_wheel>
+    <front_right_wheel>polaris_ranger_ev::front_right_wheel_joint</front_right_wheel>
+    <front_left_wheel_steering>polaris_ranger_ev::front_left_steering_joint</front_left_wheel_steering>
+    <front_right_wheel_steering>polaris_ranger_ev::front_right_steering_joint</front_right_wheel_steering>
+    <back_left_wheel>polaris_ranger_ev::rear_left_wheel_joint</back_left_wheel>
+    <back_right_wheel>polaris_ranger_ev::rear_right_wheel_joint</back_right_wheel>
+    <gas_pedal>polaris_ranger_ev::gas_joint</gas_pedal>
+    <brake_pedal>polaris_ranger_ev::brake_joint</brake_pedal>
+    <steering_wheel>polaris_ranger_ev::steering_joint</steering_wheel>
+    <hand_brake>polaris_ranger_ev::hand_brake_joint</hand_brake>
+    <fnr_switch>polaris_ranger_ev::FNR_switch_joint</fnr_switch>
+    <fnr_switch_f>polaris_ranger_ev::FNR_switch::FNR_switch_F</fnr_switch_f>
+    <fnr_switch_r>polaris_ranger_ev::FNR_switch::FNR_switch_R</fnr_switch_r>
+    <front_torque>1000</front_torque>
+    <back_torque>1000</back_torque>
+    <front_brake_torque>2000</front_brake_torque>
+    <back_brake_torque>2000</back_brake_torque>
+    <!-- 16 km/hr ~= 4.5 m/s -->
+    <max_speed>2.5</max_speed>
+    <!-- 37 deg ~= 0.6458 rad -->
+    <max_steer>0.6458</max_steer>
+    <min_brake_percent>0.06</min_brake_percent>
+    <flwheel_steering_p_gain>500</flwheel_steering_p_gain>
+    <frwheel_steering_p_gain>500</frwheel_steering_p_gain>
+    <flwheel_steering_i_gain>0</flwheel_steering_i_gain>
+    <frwheel_steering_i_gain>0</frwheel_steering_i_gain>
+    <flwheel_steering_d_gain>50</flwheel_steering_d_gain>
+    <frwheel_steering_d_gain>50</frwheel_steering_d_gain>
+  </plugin>
+  <plugin name="actor" filename="libsphinx_actor.so">
+    <type>vehicle</type>
+    <update_rate>25</update_rate>
+  </plugin>
+  <plugin name="omniscient" filename="libsphinx_omniscient.so">
+    <omnicient></omnicient>
+  </plugin>
+  <plugin name="gps" filename="libsphinx_gps.so">
+    <update_rate>1</update_rate>
+    <initial_time>2016-01-01 00:00:00.000</initial_time>
+    <status>A</status> <!-- Navigation receiver status ('A':Valid, 'V':Warning) -->
+    <position_lat_expr>val</position_lat_expr> <!-- Latitude position expression ("val": nominal value in decimal degrees) -->
+    <position_lng_expr>val</position_lng_expr> <!-- Longitude position expression ("val": nominal value in decimal degrees) -->
+    <position_alt_expr>val</position_alt_expr> <!-- Altitude position expression ("val": nominal value in decimal degrees) -->
+    <velocity_lat_expr>val</velocity_lat_expr> <!-- Latitude velocity expression ("val": nominal value in decimal degrees) -->
+    <velocity_lng_expr>val</velocity_lng_expr> <!-- Longitude velocity expression ("val": nominal value in decimal degrees) -->
+    <velocity_alt_expr>val</velocity_alt_expr> <!-- Altitude velocity expression ("val": nominal value in decimal degrees) -->
+    <p_acc_m_expr>0.8</p_acc_m_expr> <!-- Position Accuracy Estimate (m) -->
+    <s_acc_mps_expr>0.5</s_acc_mps_expr> <!-- Speed Accuracy Estimate (m/s) -->
+    <faa_mode_indicator>A</faa_mode_indicator> <!-- Mode indicator ('N':No Fix, 'A':Autonomous, 'D':Differential, 'E':Estimated/Dead reckoning fix) -->
+    <pos_mode>AA</pos_mode> <!-- Positioning mode, First character for GPS, second character for GLONASS -->
+    <num_sv>12</num_sv> <!-- Number of satellites used (range: 0-99) -->
+    <quality>1</quality> <!-- Quality indicator (0:No Fix, 1:Autonomous, 2:Differential, 6:Estimated/Dead reckoning fix) -->
+    <pdop_expr>1.0</pdop_expr> <!-- Position Dilution of Precision -->
+    <hdop_expr>1.0</hdop_expr> <!-- Horizontal Dilution of Precision -->
+    <vdop_expr>1.0</vdop_expr> <!-- Vertical Dilution of Precision -->
+    <range_rms_expr>0.0</range_rms_expr> <!-- RMS value of the standard deviation of the ranges (m) -->
+    <selection_mode>A</selection_mode> <!-- 'A':Automatic selection, 'M':Manual selection (2D/3D) -->
+    <fix_mode>3</fix_mode> <!-- Fix mode 1:No Fix, 2: 2D Fix, 3: 3D Fix -->
+    <std_lat_expr>0.8</std_lat_expr> <!-- Standard deviation of latitude error (m) -->
+    <std_long_expr>0.8</std_long_expr> <!-- Standard deviation of longitude error (m) -->
+    <std_alt_expr>0.8</std_alt_expr> <!-- Standard deviation of altitude error (m) -->
+    <out_of_order>false</out_of_order> <!-- error flag: true activate breakdown without sensor output -->
+    <number_delay_samples>0</number_delay_samples>
+  </plugin>
+  <plugin name="barometer" filename="libsphinx_barometer_ng.so">
+    <linkBaro>body</linkBaro>
+    <iio_name>ms5607</iio_name>
+    <barometer>
+      <frequency>1</frequency>
+      <out_of_order>false</out_of_order>
+      <temperature_expr>val</temperature_expr>
+      <pressure_expr>val+noise*0.01</pressure_expr>
+    </barometer>
+  </plugin>
+</model>
