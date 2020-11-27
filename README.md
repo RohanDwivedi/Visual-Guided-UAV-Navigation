@@ -1,7 +1,7 @@
-#  Machine-vision to track moving objects
-## Visual guided UAV Navigation
+# Visual guided UAV Navigation
+##  Machine-vision to track moving objects
 
-### ABSTRACT
+### PPROJECT ABSTRACT
 
 Quadrotor navigation using computer vision is an open research problem. To
 be able to track objects using quadrotors has very important applications.
@@ -18,3 +18,15 @@ mentation of YOLOV3 to train the model and modifies its detector to pass
 the coordinates of the bounding box as a ROS message. We discuss a method
 for the inverse projection of 2d image coordinates to 3d world coordinates
 in this thesis. 
+
+### MAJOR DEPENDENCIES
+
+1. Ros Kintetic Kame  - http://wiki.ros.org/kinetic
+2. Bebop Autonomy ROS Driver for parrot bebop 2 - https://bebop-autonomy.readthedocs.io/en/latest/
+3. Parrot Sphinx simulation environment based on Gazebo - https://developer.parrot.com/docs/sphinx/firststep.html
+4. Eigen Library for linear algebra operations https://gitlab.com/libeigen/eigen.git
+5. CVBridge  http://wiki.ros.org/cv_bridge 
+
+### TROUBLESHOOT
+https://forum.developer.parrot.com/t/using-bebop-autonomy-with-sphinx-on-same-machine/6726/5
+https://answers.ros.org/question/290660/import-cv2-error-caused-by-ros/
