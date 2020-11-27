@@ -34,6 +34,6 @@ in this thesis.
 
 ### RUNNING THE PROJECT
 1. Build the dependencies
-2. clone the repo and catkin build
-3. roslaunch visual_nav visualNav.launch
+2. Clone the repo and catkin build
+3. "roslaunch visual_nav visualNav.launch"
 
