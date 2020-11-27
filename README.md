@@ -31,3 +31,9 @@ in this thesis.
 1.  https://forum.developer.parrot.com/t/using-bebop-autonomy-with-sphinx-on-same-machine/6726/5
 2.  https://answers.ros.org/question/290660/import-cv2-error-caused-by-ros/
 3.  YOLO Model from TrainYourOwnYOLO repository was retrained on synthetic dataset of the vehicle used (polaris ranger) for the project which was generated using simulation in Gazebo. Training and testing dataset is not included due to its size; the trained weights can be directly used with the detector. The detector was modified to work with ROS script for this project. 
+
+### RUNNING THE PROJECT
+1. Build the dependencies
+2. clone the repo and catkin build
+3. roslaunch visual_nav visualNav.launch
+
