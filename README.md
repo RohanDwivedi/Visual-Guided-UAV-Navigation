@@ -1,7 +1,7 @@
 # Visual guided UAV Navigation
 ##  Machine-vision to track moving objects
 
-### PPROJECT ABSTRACT
+### PROJECT ABSTRACT
 
 Quadrotor navigation using computer vision is an open research problem. To
 be able to track objects using quadrotors has very important applications.
